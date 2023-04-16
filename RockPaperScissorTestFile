@@ -1,0 +1,59 @@
+using System;
+using ClassLibrary1;
+using FluentAssertions;
+
+namespace RockPaperScissorGame
+{
+    public class RockPaperScissorGame
+    {
+        RockPaperScissor rockPaperScissor = new RockPaperScissor();
+        [Fact]
+        public void Rock_Should_Beat_Scissor()
+        {
+            rockPaperScissor.RockBeatScissor("rock", "scissor").Should().Be("I won");
+
+            rockPaperScissor.RockBeatScissor("scissor", "rock").Should().Be("Opponent won");
+        }
+
+
+        [Fact]
+        public void Scissor_Should_Beat_Paper()
+        {
+            rockPaperScissor.ScissorBeatPaper("scissor", "paper").Should().Be("I won");
+        }
+
+        [Fact]
+        public void Paper_Should_Beat_Rock()
+        {
+            rockPaperScissor.PaperBeatRock("paper", "rock").Should().Be("I won");
+            rockPaperScissor.PaperBeatRock("rock", "paper").Should().Be("Opponent won");
+        }
+
+
+        [Fact]
+        public void Game_Should_BE_Draw()
+        {
+            rockPaperScissor.DrawGame("rock", "rock").Should().Be("Game Draw");
+        }
+
+
+        [Fact]
+        public void Testing_My_Score_Is_Higher()
+        {
+            rockPaperScissor.HighestScore().Should().Be("Sonam has highest score");
+        }
+
+        [Fact] public void Final_Score_Should_Not_Be_Negative()
+        {
+            Assert.Throws<ArgumentException>(() => rockPaperScissor.HighestScore());
+        }
+
+
+        [Fact]
+        public void Opponent_Score_Should_Be_Higher()
+        {
+            rockPaperScissor.HighestScore().Should().Be("Sia score is higher");
+        }
+
+    }
+}
