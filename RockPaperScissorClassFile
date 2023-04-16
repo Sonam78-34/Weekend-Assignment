@@ -1,0 +1,111 @@
+using System.Drawing;
+
+namespace ClassLibrary1
+{
+    public class RockPaperScissor
+    {
+        public string player1 = "sonam";
+        public int myScore = 0;
+        public string opponentPlayer = "sia";
+        public int opponentScore = 0;
+        string whoWon = " ";
+        public int FinalScore = 0;
+        public string highestScorePlayerName = " ";        
+        public string RockBeatScissor(string mychoice, string opponentchoice)
+        {
+            if (mychoice == "rock" && opponentchoice == "scissor")
+            {
+                whoWon = "I won";
+                myScore++;
+
+            }
+            if (mychoice == "scissor" && opponentchoice == "rock")
+            {
+                whoWon = "Opponent won";
+                opponentScore++;
+
+            }
+            return whoWon;
+
+        }
+
+
+        public string ScissorBeatPaper(string mychoice, string opponentchoice)
+        {
+            if (mychoice == "scissor" && opponentchoice == "paper")
+            {
+                whoWon = "I won";
+                myScore++;
+
+            }
+            if (mychoice == "paper" && opponentchoice == "scissor")
+            {
+                whoWon = "Opponent won";
+                opponentScore++;
+
+            }
+            return whoWon;
+
+        }
+
+
+
+        public string PaperBeatRock(string mychoice, string opponentchoice)
+        {
+            if (mychoice == "paper" && opponentchoice == "rock")
+            {
+                whoWon = "I won";
+                myScore++;
+
+            }
+            if (mychoice == "rock" && opponentchoice == "paper")
+            {
+                whoWon = "Opponent won";
+                opponentScore++;
+
+            }
+            return whoWon;
+
+        }
+
+
+        public string DrawGame(string mychoice, string opponentchoice)
+        {
+            if (mychoice == opponentchoice)
+            {
+                whoWon = "Game Draw";
+            }
+            return whoWon;
+        }
+
+
+        public string HighestScore()
+        {
+                if (myScore > opponentScore)
+                {
+                    FinalScore = myScore - opponentScore;
+                    highestScorePlayerName = "Sonam has highest score";
+                }
+                else
+                {
+                    FinalScore = opponentScore - myScore;
+                highestScorePlayerName = "Sia score is higher";
+                }
+            try
+            {
+                if(FinalScore < 0)
+                {
+                    throw new ArgumentException("The integer must be non-negative.");
+                }
+            }
+            catch(ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+          
+            return highestScorePlayerName;
+        }
+       
+
+    }
+}
