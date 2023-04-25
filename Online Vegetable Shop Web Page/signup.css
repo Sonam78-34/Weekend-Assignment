@@ -1,0 +1,49 @@
+body{
+    background-image: url("https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/6686472/1820/1213/m1/fpnw/wm1/inxo00aws6rrqosj5ag6jgp0bneta2mmfjznairni7mpyym0yekqinkzdcyx0re4-.jpg?1563236855&s=87b69f509ea30c0fcbbfaeb14f87ff6a");
+    background-size: 100%;
+    
+    
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin-top: 50px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
